@@ -93,10 +93,5 @@ Se seu projeto utiliza a API do Google Gemini (anteriormente parte do Google AI 
    vercel --prod
    ```
 
-## Personalização
-- Altere as cores, logos e textos nos arquivos HTML/CSS conforme desejar.
-- Para trocar o favicon, substitua o arquivo em `assets/furia-logo.png`.
-- Adicione prints do seu app na seção "Prints do App" acima.
-
 ## Licença
 Este projeto é open-source e pode ser adaptado livremente.

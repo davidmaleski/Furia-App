@@ -1,17 +1,20 @@
 # FURIA Fan Hub
 
+Confira o app em funcionamento: [https://app-furia.vercel.app/login.html](https://app-furia.vercel.app/login.html)
+
+![Tela de Login](./prints/home1.png)
+![Tela Principal](./prints/home2.png)
+![Tela Principal](./prints/home3.png)
+
 Este é um aplicativo web para fãs da FURIA Esports, desenvolvido em HTML, CSS e JavaScript, com autenticação via Google, integração com Firebase e dados esportivos via SportsData API.
 
 ## 📸 Prints do App
 
 Adicione aqui prints do seu app para mostrar como ele funciona:
 
-```
-[Coloque aqui suas imagens de tela, por exemplo:]
 ![Tela de Login](./prints/home1.png)
 ![Tela Principal](./prints/home2.png)
 ![Tela Principal](./prints/home3.png)
-```
 
 ## Funcionalidades
 - Login com Google
@@ -23,36 +26,36 @@ Adicione aqui prints do seu app para mostrar como ele funciona:
 ## Como rodar localmente
 
 1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repo.git
-   cd seu-repo
-   ```
+   ```bash
+   git clone [https://github.com/seu-usuario/seu-repo.git](https://github.com/seu-usuario/seu-repo.git)
+   cd seu-repo
+   ```
 
 2. **Instale o http-server (caso não tenha):**
-   ```bash
-   npm install -g http-server
-   ```
+   ```bash
+   npm install -g http-server
+   ```
 
 3. **Adicione suas chaves de API:**
-   - **Firebase:**  
-     Abra os arquivos abaixo e substitua os valores dos campos do objeto `firebaseConfig` pelas suas credenciais do Firebase:
-     - `js/firebase-init.js`
-     - `js/firebase-manager.js`
-     - `js/firebase-config.js`
-     - `js/init-firebase.js`
-   - **SportsData API:**  
-     Abra os arquivos abaixo e substitua o valor do campo da chave por sua chave da SportsData.io:
-     - `index.html` (procure por `SUA_SPORTSDATA_API_KEY`)
-     - `js/config.js`
-     - `js/app.js`
-   - **Importante:**  
-     Não deixe suas chaves reais em repositórios públicos! Use apenas para testes ou configure variáveis de ambiente em produção.
+   - **Firebase:**  
+     Abra os arquivos abaixo e substitua os valores dos campos do objeto `firebaseConfig` pelas suas credenciais do Firebase:
+     - `js/firebase-init.js`
+     - `js/firebase-manager.js`
+     - `js/firebase-config.js`
+     - `js/init-firebase.js`
+   - **SportsData API:**  
+     Abra os arquivos abaixo e substitua o valor do campo da chave por sua chave da SportsData.io:
+     - `index.html` (procure por `SUA_SPORTSDATA_API_KEY`)
+     - `js/config.js`
+     - `js/app.js`
+   - **Importante:**  
+     Não deixe suas chaves reais em repositórios públicos! Use apenas para testes ou configure variáveis de ambiente em produção.
 
 4. **Inicie o servidor local:**
-   ```bash
-   npx http-server -p 8080
-   ```
-   Acesse [http://localhost:8080](http://localhost:8080) no navegador.
+   ```bash
+   npx http-server -p 8080
+   ```
+   Acesse [http://localhost:8080](http://localhost:8080) no navegador.
 
 ## Configuração das APIs
 
@@ -68,17 +71,17 @@ Adicione aqui prints do seu app para mostrar como ele funciona:
 
 ## Deploy no Vercel
 1. Instale o Vercel CLI:
-   ```bash
-   npm install -g vercel
-   ```
+   ```bash
+   npm install -g vercel
+   ```
 2. Faça login:
-   ```bash
-   vercel login
-   ```
+   ```bash
+   vercel login
+   ```
 3. Faça o deploy:
-   ```bash
-   vercel --prod
-   ```
+   ```bash
+   vercel --prod
+   ```
 
 ## Personalização
 - Altere as cores, logos e textos nos arquivos HTML/CSS conforme desejar.

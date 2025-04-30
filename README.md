@@ -2,10 +2,6 @@
 
 Confira o app em funcionamento: [https://app-furia.vercel.app/login.html](https://app-furia.vercel.app/login.html)
 
-![Tela de Login](./prints/home1.png)
-![Tela Principal](./prints/home2.png)
-![Tela Principal](./prints/home3.png)
-
 Este é um aplicativo web para fãs da FURIA Esports, desenvolvido em HTML, CSS e JavaScript, com autenticação via Google, integração com Firebase e dados esportivos via SportsData API.
 
 ## 📸 Prints do App

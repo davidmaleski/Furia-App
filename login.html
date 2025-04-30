@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FURIA Fan Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/furia-logo.png">
+    
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+    <script src="js/firebase-manager.js"></script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+        }
+        .login-wrapper {
+            min-height: 100dvh;
+            min-height: 100vh;
+            height: 100dvh;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-container {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .login-logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 1.5rem;
+            object-fit: contain;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .login-title {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #fff 0%, #bdbdbd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        .login-title-bar {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff9800 60%, transparent 100%);
+            border-radius: 2px;
+            margin: 0 auto 1.2rem auto;
+            box-shadow: 0 2px 8px 0 #ff980044;
+        }
+        
+        .login-description {
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+        
+        .login-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            max-width: 250px;
+        }
+        
+        .login-button:hover {
+            background-color: #E64400;
+        }
+        
+        .login-button i {
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 1.5rem;
+            }
+            
+            .login-logo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .login-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        #logoError {
+            color: red;
+            font-size: 0.8rem;
+            margin-top: -1rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-container">
+            <img 
+                src="assets/furia-logo.png" 
+                alt="FURIA Logo" 
+                class="login-logo" 
+                onerror="handleLogoError(this)"
+            >
+            <div id="logoError"></div>
+            <h1 class="login-title">FURIA ESPORTS
+                <span class="login-title-bar"></span>
+            </h1>
+            <p class="login-description">Faça login para acessar o aplicativo oficial de fãs da FURIA CS:GO</p>
+            <button id="googleLogin" class="login-button">
+                <i class="fab fa-google"></i> Entrar com Google
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function handleLogoError(img) {
+            console.error('Erro ao carregar logo:', img.src);
+            document.getElementById('logoError').style.display = 'block';
+            document.getElementById('logoError').textContent = 'Erro ao carregar a logo';
+            
+            // Tentar carregar com caminho alternativo
+            if (img.src.includes('assets/')) {
+                console.log('Tentando caminho alternativo...');
+                img.src = '/assets/furia-logo.png';
+            }
+        }
+
+        // Log para debug
+        console.log('Verificando imagem da logo...');
+        window.addEventListener('load', () => {
+            const logo = document.querySelector('.login-logo');
+            console.log('Status da logo:', {
+                src: logo.src,
+                naturalWidth: logo.naturalWidth,
+                naturalHeight: logo.naturalHeight,
+                complete: logo.complete
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Verificar se o usuário já está logado
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    // Usuário já está logado, redirecionar para a página principal
+                    window.location.href = 'index.html';
+                }
+            });
+
+            // Adicionar evento de clique ao botão de login
+            document.getElementById('googleLogin').addEventListener('click', () => {
+                const provider = new firebase.auth.GoogleAuthProvider();
+                firebase.auth().signInWithPopup(provider)
+                    .then((result) => {
+                        // Login bem-sucedido, redirecionar para a página principal
+                        window.location.href = 'index.html';
+                    })
+                    .catch((error) => {
+                        console.error('Erro ao fazer login:', error);
+                        alert('Erro ao fazer login. Tente novamente mais tarde.');
+                    });
+            });
+        });
+    </script>
+</body>
+</html> 

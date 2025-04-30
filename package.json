@@ -1,0 +1,29 @@
+{
+  "name": "appfuria",
+  "version": "1.0.0",
+  "description": "Aplicativo de fãs da FURIA CS:GO",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve",
+    "dev": "serve -l 3000",
+    "deploy": "vercel",
+    "vercel-build": "echo 'No build step required'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": ["furia", "csgo", "esports", "fan-app"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.23.0",
+    "serve": "^14.2.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "@babel/preset-env": "^7.23.9",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/user-event": "^14.5.2",
+    "vercel": "^33.0.0"
+  }
+}

@@ -16,11 +16,10 @@ Adicione aqui prints do seu app para mostrar como ele funciona:
 
 ## Funcionalidades
 - Login com Google
-- Chat em tempo real
+- Chat integrado com Gemini (IA)
 - Perfil do usuário
-- Estatísticas e informações do time FURIA
+- Estatísticas e informações do time FURIA em tempo real
 - Responsivo para desktop e mobile
-- **(Adicione aqui funcionalidades que usam Gemini, se houver)**
 
 ## Como rodar localmente
 

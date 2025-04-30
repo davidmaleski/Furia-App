@@ -8,9 +8,11 @@ Este é um aplicativo web para fãs da FURIA Esports, desenvolvido em HTML, CSS 
 
 Adicione aqui prints do seu app para mostrar como ele funciona:
 
-![Tela de Login](./prints/home1.png)
-![Tela Principal](./prints/home2.png)
-![Tela Principal](./prints/home3.png)
+<div>
+  <img src="./prints/home1.png" alt="Tela de Login" width="32%">
+  <img src="./prints/home2.png" alt="Tela Principal" width="32%">
+  <img src="./prints/home3.png" alt="Tela Principal" width="32%">
+</div>
 
 ## Funcionalidades
 - Login com Google

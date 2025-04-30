@@ -20,6 +20,7 @@ Adicione aqui prints do seu app para mostrar como ele funciona:
 - Perfil do usuário
 - Estatísticas e informações do time FURIA
 - Responsivo para desktop e mobile
+- **(Adicione aqui funcionalidades que usam Gemini, se houver)**
 
 ## Como rodar localmente
 
@@ -46,6 +47,8 @@ Adicione aqui prints do seu app para mostrar como ele funciona:
      - `index.html` (procure por `SUA_SPORTSDATA_API_KEY`)
      - `js/config.js`
      - `js/app.js`
+    - **Google Gemini API:**
+        Abra os arquivos onde a API do Gemini é utilizada (verifique seus arquivos JavaScript como `js/gemini-integration.js`, `js/app.js` ou similar) e substitua o placeholder (`SUA_GEMINI_API_KEY` ou similar) pela sua chave.
    - **Importante:**  
      Não deixe suas chaves reais em repositórios públicos! Use apenas para testes ou configure variáveis de ambiente em produção.
 
@@ -66,6 +69,15 @@ Adicione aqui prints do seu app para mostrar como ele funciona:
 ### SportsData API
 - Crie uma conta em [SportsData.io](https://sportsdata.io/)
 - Pegue sua chave de API e substitua nos arquivos indicados acima.
+
+### Google Gemini API
+Se seu projeto utiliza a API do Google Gemini (anteriormente parte do Google AI Platform ou disponível via Google AI Studio), você precisará de uma chave:
+1.  Vá para o [Google AI Studio](https://aistudio.google.com/).
+2.  Faça login com sua conta Google.
+3.  Crie uma nova chave de API seguindo as instruções na plataforma.
+4.  Copie a chave gerada e cole-a nos arquivos do seu projeto onde o placeholder `SUA_GEMINI_API_KEY` (ou nome similar) estiver indicado (verifique os arquivos mencionados na seção "Como rodar localmente").
+
+**Lembre-se:** Mantenha suas chaves de API seguras e nunca as exponha publicamente.
 
 ## Deploy no Vercel
 1. Instale o Vercel CLI:

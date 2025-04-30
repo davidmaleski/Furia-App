@@ -26,7 +26,7 @@ Adicione aqui prints do seu app para mostrar como ele funciona:
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/seu-usuario/seu-repo.git](https://github.com/seu-usuario/seu-repo.git)
+   git clone [https://github.com/davidmaleski/furia-app.git](https://github.com/davidmaleski/furia-app.git)
    cd seu-repo
    ```
 
